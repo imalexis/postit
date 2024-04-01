@@ -12,7 +12,9 @@ export default async function Dashboard() {
   }
   return (
     <Flex style={{ width: "50%", margin: "0 auto" }} vertical align="center">
-      <Title>Welcome back {session?.user?.name}</Title>
+      <Title style={{ color: "#F58653" }}>
+        Welcome back {session?.user?.name}
+      </Title>
       <PostList />
     </Flex>
   );

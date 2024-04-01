@@ -1,8 +1,9 @@
 import { Comment } from "./Comment";
 
-export type PostType = {
+export type Post = {
   id: string;
   title: string;
+  createdAt: string;
   updatedAt?: string;
   user: {
     name: string;

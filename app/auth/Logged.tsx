@@ -9,14 +9,20 @@ type User = {
 
 export default function Logged({ image }: User) {
   return (
-    <Flex>
-      <Button
-        onClick={() => signOut()}
-        className="bg-gray-700 text-white text-sm px-6 py-2 rounded-md"
-      >
-        Sign out
+    <Flex align="center">
+      <Button type="link" onClick={() => signOut()} style={styles.signOut}>
+        Sign Out
       </Button>
       <Avatar src={image} size={32} />
     </Flex>
   );
 }
+
+const styles = {
+  signOut: {
+    margin: "8px",
+    fontWeight: "bold",
+    fontSize: "20px",
+    color: "#207178",
+  },
+};

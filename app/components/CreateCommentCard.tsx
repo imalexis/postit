@@ -6,7 +6,10 @@ import TextArea from "antd/es/input/TextArea";
 import axios, { AxiosError } from "axios";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
+import { Typography } from "antd";
+import { BorderHorizontalOutlined, CoffeeOutlined } from "@ant-design/icons";
 
+const { Text } = Typography;
 type Props = {
   id?: string;
 };
@@ -54,21 +57,50 @@ export default function CreateCommentCard({ id }: Props) {
   };
 
   return (
-    <Card title="Create a comment" style={{ width: "50%" }}>
-      <Flex vertical gap={8}>
-        <TextArea
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-          placeholder="What's on your mind?"
-          style={{ width: "100%" }}
-        />
-        <Flex align="center" justify="space-between">
-          <Badge count={`${comment.length}/300`} />
-          <Button onClick={submitComment} disabled={isDisabled}>
-            Create comment
-          </Button>
-        </Flex>
+    <Flex vertical style={{ width: "50%" }} gap={12}>
+      <Flex justify="center">
+        <Text
+          style={{ color: "#F58653", fontWeight: "bold", fontSize: "18px" }}
+        >
+          Add a comment ? <CoffeeOutlined />
+        </Text>
       </Flex>
-    </Card>
+
+      <Flex flex={1} style={{ width: "100%" }}>
+        <Card style={{ width: "100%" }}>
+          <Flex vertical gap={8}>
+            <TextArea
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+              placeholder="What's on your mind?"
+              style={{ width: "100%" }}
+            />
+            <Flex align="center" justify="space-between">
+              <Text style={{ color: "#999999" }}>
+                {`${comment.length}/300`}
+              </Text>
+
+              <Button
+                onClick={submitComment}
+                disabled={isDisabled}
+                style={styles.createCommentButton}
+              >
+                Add a comment
+              </Button>
+            </Flex>
+          </Flex>
+        </Card>
+      </Flex>
+    </Flex>
   );
 }
+
+const styles = {
+  createCommentButton: {
+    backgroundColor: "#F58653",
+    color: "white",
+    fontWeight: "bold",
+    border: "transparent",
+    borderRadius: "15px",
+  },
+};

@@ -1,12 +1,12 @@
 "use client";
 
-import { PostType } from "@/app/types/Post";
+import { Post } from "@/app/types/Post";
 import PostCard from "@/app/components/PostCard";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import AddComment from "@/app/components/CreateCommentCard";
-import { Avatar, Badge, Card, Flex } from "antd";
-import TextArea from "antd/es/input/TextArea";
+import CreateCommentCard from "@/app/components/CreateCommentCard";
+import { Flex } from "antd";
+import CommentCard from "@/app/components/CommentCard";
 
 const fetchDetails = async (slug: string) => {
   const response = await axios.get(`/api/posts/${slug}`);
@@ -14,7 +14,7 @@ const fetchDetails = async (slug: string) => {
 };
 
 export default function PostDetail({ params }: { params: { slug: string } }) {
-  const { data, isLoading } = useQuery<PostType>({
+  const { data, isLoading } = useQuery<Post>({
     queryKey: ["detail-post"],
     queryFn: () => fetchDetails(params.slug),
   });
@@ -31,22 +31,11 @@ export default function PostDetail({ params }: { params: { slug: string } }) {
         postTitle={data.title || ""}
         comments={data.comments || []}
         showCommentNumber={false}
+        createdAt={data.createdAt}
       />
-      <AddComment id={data.id || ""} />
+      <CreateCommentCard id={data.id || ""} />
       {data?.comments?.map((comment, index) => (
-        <Card title={comment.id} style={{ width: "50%" }} key={index}>
-          <Flex vertical gap={8}>
-            <Flex align="center">
-              <Avatar size={32} src={comment.user.image} />
-              <Badge className="text-sm">{comment.createdAt}</Badge>
-            </Flex>
-            <TextArea
-              value={comment.message}
-              disabled={true}
-              style={{ width: "100%" }}
-            />
-          </Flex>
-        </Card>
+        <CommentCard comment={comment} key={index} />
       ))}
     </Flex>
   );

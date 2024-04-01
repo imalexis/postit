@@ -3,7 +3,7 @@ import axios from "axios";
 import CreatePostCard from "./components/CreatePostCard";
 import { useQuery } from "@tanstack/react-query";
 import PostCard from "./components/PostCard";
-import PostType from "./types/Posts";
+import { Post } from "./types/Post";
 import { Flex } from "antd";
 
 const allPosts = async () => {
@@ -12,7 +12,7 @@ const allPosts = async () => {
 };
 
 export default function Home() {
-  const { data, error, isLoading } = useQuery<PostType[]>({
+  const { data, error, isLoading } = useQuery<Post[]>({
     queryFn: allPosts,
     queryKey: ["posts"],
   });
@@ -31,10 +31,11 @@ export default function Home() {
       avatar={post.user.image}
       postTitle={post.title}
       id={post.id}
+      createdAt={post.createdAt}
     />
   ));
   return (
-    <Flex vertical align="center" gap={48}>
+    <Flex vertical align="center" gap={48} flex={1}>
       <CreatePostCard />
       {posts}
     </Flex>

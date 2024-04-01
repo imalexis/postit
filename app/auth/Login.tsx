@@ -1,16 +1,23 @@
 "use client";
 
+import { Button, Flex } from "antd";
 import { signIn } from "next-auth/react";
 
 export default function Login() {
   return (
-    <li className="list-node">
-      <button
-        onClick={() => signIn()}
-        className="text-sm bg-gray-700 text-white py-2 px-6 rounded-xl disabled:opacity-25"
-      >
+    <Flex>
+      <Button type="link" onClick={() => signIn()} style={styles.signIn}>
         Sign In
-      </button>
-    </li>
+      </Button>
+    </Flex>
   );
 }
+
+const styles = {
+  signIn: {
+    margin: "8px",
+    fontWeight: "bold",
+    fontSize: "20px",
+    color: "#207178",
+  },
+};

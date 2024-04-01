@@ -20,7 +20,7 @@ export default function PostList() {
     return <h1>Posts are loading</h1>;
   }
   return (
-    <Flex vertical align="center">
+    <Flex vertical align="center" style={{ width: "100%" }} gap={12}>
       {data?.posts?.map((post) => (
         <EditPost
           id={post.id}
@@ -29,6 +29,7 @@ export default function PostList() {
           name={data.name}
           title={post.title}
           comments={post.comments}
+          createdAt={post.createdAt}
         />
       ))}
     </Flex>
