@@ -58,7 +58,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Landing Page
 
-![landing page](./docs/image/landing_page.mov)
 <video width="640" height="480" controls>
   <source src="./docs/image/landing_page.mov" type="video/mp4">
 </video>
@@ -81,12 +80,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Add comments
 
-![add comments](./docs/image/add_comments.mov)
 <video width="640" height="480" controls>
   <source src="./docs/image/add_comments.mov" type="video/mp4">
 </video>
 
-*Add comments to the current post. *
+https://github.com/imalexis/postit/blob/main/docs/image/add_comments.mov
+
+*Add comments to the current post.*
 
 ### Dashboard
 
