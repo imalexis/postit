@@ -58,9 +58,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Landing Page
 
-<video width="640" height="480" controls>
-  <source src="./docs/image/landing_page.mov" type="video/mp4">
-</video>
+https://github.com/imalexis/postit/assets/75359034/8621007a-1430-4139-8747-3ea4b9d4ff7a
 
 *Landing page of Postit project. User log in by hitting the Signin button and then can log in with their google account.*
 
@@ -124,3 +122,9 @@ https://github.com/imalexis/postit/blob/main/docs/image/add_comments.mov
   - request: {title: string}
   - response: {}
   - handler: `api/posts/addPost.ts`
+
+    
+
+
+
+
