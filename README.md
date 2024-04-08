@@ -78,11 +78,7 @@ https://github.com/imalexis/postit/assets/75359034/8621007a-1430-4139-8747-3ea4b
 
 ### Add comments
 
-<video width="640" height="480" controls>
-  <source src="./docs/image/add_comments.mov" type="video/mp4">
-</video>
-
-https://github.com/imalexis/postit/blob/main/docs/image/add_comments.mov
+https://github.com/imalexis/postit/assets/75359034/23f88338-6091-4813-b779-afddcce9df46
 
 *Add comments to the current post.*
 
