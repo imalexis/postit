@@ -3,7 +3,6 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "../auth/[...nextauth]";
 import prisma from "../../../prisma/client";
 
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -13,18 +12,15 @@ export default async function handler(
     if (!session) {
       return res.status(401).json({ message: "Please sign in" });
     }
-
-    // Delete a post
     try {
       const postId = req.body;
       const result = await prisma.post.delete({
         where: {
-            id: postId
-        }
-      })
+          id: postId,
+        },
+      });
       res.status(200).json(result);
     } catch (err) {
-      console.log('err on deletePost: ', err);
       res.status(403).json({ err: "Error has occured whilst deleting a post" });
     }
   }

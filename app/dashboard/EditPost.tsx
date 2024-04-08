@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
@@ -28,7 +27,6 @@ export default function EditPost({
   id,
   createdAt,
 }: Props) {
-  console.log("comments = ", comments);
   let deleteToastId: string;
   const queryClient = useQueryClient();
   const { mutate } = useMutation(

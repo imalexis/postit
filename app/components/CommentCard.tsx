@@ -1,12 +1,11 @@
 "use client";
 
-import { Avatar, Badge, Card, Flex } from "antd";
-import TextArea from "antd/es/input/TextArea";
+import { Avatar, Card, Flex } from "antd";
 import { Comment } from "../types/Comment";
 import { Typography } from "antd";
-import { verify } from "crypto";
 
 const { Text, Paragraph } = Typography;
+
 type Props = {
   comment: Comment;
 };

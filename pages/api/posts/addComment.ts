@@ -8,7 +8,6 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
-    console.log("reveive request of adding comment");
     const session = await getServerSession(req, res, authOptions);
     if (!session) {
       return res.status(401).json({ message: "Please sign in" });
@@ -30,7 +29,6 @@ export default async function handler(
       });
       res.status(200).json(result);
     } catch (err) {
-      console.log("err on deletePost: ", err);
       res.status(403).json({ err: "Error has occured whilst deleting a post" });
     }
   }

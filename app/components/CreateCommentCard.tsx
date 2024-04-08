@@ -1,13 +1,13 @@
 "use client";
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { Badge, Button, Card, Flex } from "antd";
+import { Button, Card, Flex } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import axios, { AxiosError } from "axios";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { Typography } from "antd";
-import { BorderHorizontalOutlined, CoffeeOutlined } from "@ant-design/icons";
+import { CoffeeOutlined } from "@ant-design/icons";
 
 const { Text } = Typography;
 type Props = {

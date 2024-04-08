@@ -1,7 +1,6 @@
 "use client";
 import { Avatar, Button, Card, Flex } from "antd";
 import { Comment } from "../types/Comment";
-import TextArea from "antd/es/input/TextArea";
 import { Typography } from "antd";
 import Paragraph from "antd/es/typography/Paragraph";
 import { calculateTimeAgo } from "./CommentCard";

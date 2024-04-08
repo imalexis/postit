@@ -30,7 +30,6 @@ export default async function handler(
       });
       res.status(200).json(data);
     } catch (err) {
-      console.log("err on authPosts: ", err);
       res.status(403).json({ err: "Error has occured whilst making a post" });
     }
   }

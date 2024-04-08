@@ -56,7 +56,7 @@ export default function CreatePostCard() {
               disabled={isDisabled}
               style={styles.createPostButton}
             >
-              Create post
+              ✏️ Create post
             </Button>
           </Flex>
         </Flex>
